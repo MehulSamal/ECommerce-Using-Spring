@@ -12,16 +12,29 @@ public class PageController {
 	public ModelAndView index()
 	{
 		ModelAndView mv = new ModelAndView("page");
-		mv.addObject("greeting","Welcome to E-Commerce");
+		mv.addObject("title","Home");
+		mv.addObject("userClickHome",true);
 		return mv;
 	}
 	
-	@RequestMapping(value ="/test")
-	public ModelAndView test(@RequestParam(value="greeting",required=false) String greeting)
+	@RequestMapping (value = "/about" )
+	public ModelAndView about()
 	{
 		ModelAndView mv = new ModelAndView("page");
-		mv.addObject("greeting",greeting);
+		mv.addObject("title","About Us");
+		mv.addObject("userClickAbout",true);
 		return mv;
-		
 	}
+	
+	@RequestMapping (value = "/contact" )
+	public ModelAndView contact()
+	{
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title","Contact Us");
+		mv.addObject("userClickContact",true);
+		return mv;
+	}
+	
+	
+	
 }
